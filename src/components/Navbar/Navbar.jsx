@@ -7,7 +7,7 @@ const menuLinks = [
     Link: "/#",
   },
   {
-    id: 1,
+    id: 5,
     name: "Home",
     link: "/#",
   },
@@ -22,7 +22,7 @@ const menuLinks = [
     link: "/#about",
   },
   {
-    id: 5,
+    id: 7,
     name: "Blogs",
     link: "/#blogs",
   },
@@ -62,10 +62,10 @@ const Navbar = () => {
             {/* menu items */}
             <div className="hidden lg:block">
               <ul className="flex items-center gap-4">
-                {menuLinks.map((item, index) => (
+                {menuLinks.map((item) => (
                   <li
                     className="inline-block px-4 font-semibold text-gray-600 hover:text-black duration-200"
-                    key={index.id}
+                    key={item.id}
                   >
                     <a href={item.link}>{item.name}</a>
                   </li>
