@@ -1,7 +1,8 @@
 import Slider from "react-slick";
-import image1 from "../../assets/headphone.png";
-import image2 from "../../assets/macbook.png";
-import image3 from "../../assets/vr.png";
+import image1 from "../../assets/cagegory/headphone.png";
+import image2 from "../../assets/cagegory/macbook.png";
+import image3 from "../../assets/cagegory/vr.png";
+import Button from "../shared/Button";
 const HeroData = [
   {
     id: 1,
@@ -43,36 +44,42 @@ const Hero = () => {
   };
   return (
     <div className="px-[1rem] sm:px-[3rem]">
-      <div className="overflow-hidden min-h-[550px] rounded-3xl hero-bg-color flex justify-center items-center">
-      <div className="container px-[1rem] sm:px-[3rem] pb-8 sm:pb-0 ">
-        <Slider {...settings}>
-          {HeroData.map((i) => (
-            <div key={i.id}>
-              <div className="grid grid-cols-1 sm:grid-cols-2">
-                {/* content  */}
-                <div>
-                  <h1>{i.subtitle}</h1>
-                  <h1>{i.title}</h1>
-                  <h1>{i.title2}</h1>
-                  <div>
-                    <button>Shop Now</button>
+      <div className="overflow-hidden min-h-[550px] rounded-3xl flex justify-center items-center bg-gradient-to-r from-gray-300/80 to-gray-100 ">
+        <div className="container px-[1rem] sm:px-[3rem] pb-8 sm:pb-0 relative z-10">
+          <Slider {...settings}>
+            {HeroData.map((i) => (
+              <div key={i.id}>
+                <div className="grid grid-cols-1 sm:grid-cols-2">
+                  {/* content  */}
+                  <div className="flex flex-col justify-center gap-4 sm:pl-3 pt-12 sm:pt-0 text-center sm:text-left order-2 sm:order-2">
+                    <h1 className=" text-2xl sm:text-6xl lg:text-2xl font-bold">
+                      {i.subtitle}
+                    </h1>
+                    <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold">
+                      {i.title}
+                    </h1>
+                    <h1 className="text-5xl uppercase text-white sm:text-[80px] md:text-[100px] xl:text-[150px] font-bold whitespace-nowrap">
+                      {i.title2}
+                    </h1>
+                    <div>
+                      <Button text="Show Now" className="text-white bg-red-500" />
+                    </div>
+                  </div>
+
+                  {/* image */}
+                  <div className="order-2 sm:order-2">
+                    <img
+                      src={i.img}
+                      alt=""
+                      className="w-[300px] h-[300px] sm:h-[450px] sm:w-[450px] sm:scale-x-105 lg:scale-110 object-contain mx-auto drop-shadow-2xl"
+                    />
                   </div>
                 </div>
-
-                {/* image */}
-                <div>
-                  <img
-                    src={i.img}
-                    alt=""
-                    className="w-[300] h-[300] sm:h-[450] sm:scale-x-105 lg:scale-110 object-contain mx-auto drop-shadow-2xl"
-                  />
-                </div>
               </div>
-            </div>
-          ))}
-        </Slider>
+            ))}
+          </Slider>
+        </div>
       </div>
-       </div>
     </div>
   );
 };
