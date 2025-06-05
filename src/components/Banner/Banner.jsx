@@ -10,7 +10,7 @@ const Banner = ({ data }) => {
         <div className="p-8">
           <p className="text-sm">{data.discount}</p>
           <h1 className="uppercase text-4xl lg:text-7xl font-bold">
-            {data.title2}
+            {data.title}
           </h1>
           <p className="text-sm">{data.date}</p>
         </div>
@@ -19,7 +19,7 @@ const Banner = ({ data }) => {
           <img
             src={data.image}
             alt="Banner image"
-            className="scale-x-125 w-[250px] md:w-[350px] drop-shadow-2xl object-contain"
+            className="w-[250px] md:w-[350px] drop-shadow-2xl object-contain"
           />
         </div>
 
