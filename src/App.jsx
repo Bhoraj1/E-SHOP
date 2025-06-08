@@ -6,8 +6,10 @@ import Navbar from "./components/Navbar/Navbar";
 import Services from "./components/services/Service";
 
 import headphone from "./assets/cagegory/headphone.png";
-import smartWatch from './assets/cagegory/smartWatch.png'
+import smartWatch from "./assets/cagegory/smartWatch.png";
 import Products from "./components/products/Products";
+import Test from "./components/Test";
+import Blogs from "./components/Blogs/Blogs";
 
 const BannerData = {
   discount: "30% OFF",
@@ -40,7 +42,8 @@ const App = () => {
       <Services />
       <Banner data={BannerData} />
       <Products />
-       <Banner data={BannerData2} />
+      <Banner data={BannerData2} />
+      <Blogs />
     </div>
   );
 };
