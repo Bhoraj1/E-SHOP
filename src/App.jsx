@@ -10,6 +10,8 @@ import smartWatch from "./assets/cagegory/smartWatch.png";
 import Products from "./components/products/Products";
 import Test from "./components/Test";
 import Blogs from "./components/Blogs/Blogs";
+import Partner from "./components/partners/Partner";
+import Footer from "./components/footer/Footer";
 
 const BannerData = {
   discount: "30% OFF",
@@ -44,6 +46,8 @@ const App = () => {
       <Products />
       <Banner data={BannerData2} />
       <Blogs />
+      <Partner />
+      <Footer />
     </div>
   );
 };
