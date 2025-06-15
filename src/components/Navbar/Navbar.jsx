@@ -147,7 +147,7 @@ const Navbar = () => {
             <li key={item.id}>
               <a
                 href={item.link}
-                className="block text-gray-700 font-medium hover:text-primary"
+                className="block text-gray-700 font-medium hover:text-red-500"
                 onClick={() => setSidebarOpen(false)}
               >
                 {item.name}
