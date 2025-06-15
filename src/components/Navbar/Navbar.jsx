@@ -1,5 +1,6 @@
 import { IoMdSearch } from "react-icons/io";
-import { FaCaretDown, FaShoppingCart } from "react-icons/fa";
+import { FaBars, FaCaretDown, FaShoppingCart, FaTimes } from "react-icons/fa";
+import { useState } from "react";
 const menuLinks = [
   {
     id: 1,
@@ -46,6 +47,7 @@ const DropdownLinks = [
 ];
 
 const Navbar = () => {
+  const [sidebarOpen, setSidebarOpen] = useState(false);
   return (
     <div>
       <div>
@@ -120,7 +122,61 @@ const Navbar = () => {
                 4
               </div>
             </button>
+            <div className="block lg:hidden">
+              <button onClick={() => setSidebarOpen(true)}>
+                <FaBars className="text-2xl text-gray-700" />
+              </button>
+            </div>
           </div>
+          
+          
+          {/* Mobile Sidebar */}
+      <div
+        className={`fixed top-0 left-0 h-full w-64 bg-white shadow-lg transform ${
+          sidebarOpen ? "translate-x-0" : "-translate-x-full"
+        } transition-transform duration-300 z-50`}
+      >
+        <div className="p-4 flex justify-between items-center border-b">
+          <span className="text-xl font-semibold">Menu</span>
+          <button onClick={() => setSidebarOpen(false)}>
+            <FaTimes className="text-xl" />
+          </button>
+        </div>
+        <ul className="p-4 space-y-4">
+          {menuLinks.map((item) => (
+            <li key={item.id}>
+              <a
+                href={item.link}
+                className="block text-gray-700 font-medium hover:text-primary"
+                onClick={() => setSidebarOpen(false)}
+              >
+                {item.name}
+              </a>
+            </li>
+          ))}
+          <li className="mt-4 font-semibold text-gray-600">Quick Links</li>
+          {DropdownLinks.map((item) => (
+            <li key={item.id}>
+              <a
+                href={item.link}
+                className="block text-gray-600 hover:text-primary"
+                onClick={() => setSidebarOpen(false)}
+              >
+                {item.name}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      {/* Overlay */}
+      {sidebarOpen && (
+        <div
+          className="fixed inset-0 bg-black opacity-40 z-40"
+          onClick={() => setSidebarOpen(false)}
+        ></div>
+      )}
+
         </div>
       </div>
     </div>
