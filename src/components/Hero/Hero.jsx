@@ -42,6 +42,7 @@ const Hero = () => {
     pauseOnFocus: true,
     slidesToScroll: 1,
   };
+
   return (
     <div className="px-[1rem] sm:px-[3rem]">
       <div className="overflow-hidden min-h-[550px] rounded-3xl flex justify-center items-center bg-gradient-to-r from-gray-300/80 to-gray-100 ">
@@ -62,7 +63,10 @@ const Hero = () => {
                       {i.title2}
                     </h1>
                     <div>
-                      <Button text="Show Now" className="text-white bg-red-500" />
+                      <Button
+                        text="Show Now"
+                        className="text-white bg-red-500"
+                      />
                     </div>
                   </div>
 

@@ -30,8 +30,8 @@ const Footerlinks = [
 ];
 const Footer = () => {
   return (
-    <div className="px-[3rem] py-7">
-      <div className="grid md:grid-cols-4 pb-20 pt-5">
+    <div className="fpx-[3rem] py-7 ">
+      <div className="grid md:grid-cols-4 pt-5">
         {/* comapny information */}
         <div className="">
           <a

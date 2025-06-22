@@ -4,14 +4,16 @@ import Category2 from "./components/Category/Category2";
 import Hero from "./components/Hero/Hero";
 import Navbar from "./components/Navbar/Navbar";
 import Services from "./components/services/Service";
-
 import headphone from "./assets/cagegory/headphone.png";
 import smartWatch from "./assets/cagegory/smartWatch.png";
 import Products from "./components/products/Products";
-import Test from "./components/Test";
 import Blogs from "./components/Blogs/Blogs";
 import Partner from "./components/partners/Partner";
 import Footer from "./components/footer/Footer";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import LoginForm from "./components/form/LoginForm";
+import TrendingProducts from "./components/Navbar/TrendingProducts";
+import SignupForm from "./components/form/Signup";
 
 const BannerData = {
   discount: "30% OFF",
@@ -34,10 +36,9 @@ const BannerData2 = {
   className: "bg-green-500",
 };
 
-const App = () => {
+const Home = () => {
   return (
     <div>
-      <Navbar />
       <Hero />
       <Category />
       <Category2 />
@@ -47,8 +48,22 @@ const App = () => {
       <Banner data={BannerData2} />
       <Blogs />
       <Partner />
-      <Footer />
     </div>
+  );
+};
+
+const App = () => {
+  return (
+    <Router>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/login" element={<LoginForm />} />
+        <Route path="/signup" element={<SignupForm />} />
+        <Route path="/trending-products" element={<TrendingProducts />} />
+      </Routes>
+      <Footer />
+    </Router>
   );
 };
 
