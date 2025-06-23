@@ -1,7 +1,7 @@
-import { Link } from "react-router-dom";
 import Label from "../shared/Label";
 import InputText from "../shared/InputText";
 import Button from "../shared/Button";
+import Redirect from "../shared/Redirect";
 
 const LoginForm = () => {
   return (
@@ -33,9 +33,7 @@ const LoginForm = () => {
             />
           </div>
         </form>
-        <div className="text-sm text-center text-gray-600">
-          Don't have an account? <Link to="/signup">Sign up</Link>
-        </div>
+        <Redirect linkto="/signup" linkText="Signup Up" />
       </div>
     </div>
   );

@@ -1,4 +1,8 @@
 import { Link } from "react-router-dom";
+import Label from "../shared/Label";
+import InputText from "../shared/InputText";
+import Button from "../shared/Button";
+import Redirect from "../shared/Redirect";
 
 const SignupForm = () => {
   return (
@@ -9,62 +13,40 @@ const SignupForm = () => {
         </h1>
         <form className="space-y-4">
           <div>
-            <label
-              htmlFor="name"
-              className="block text-sm font-medium text-gray-700"
-            >
-              Full Name
-            </label>
-            <input
+            <Label text="Username" style="" />
+            <InputText
               type="text"
-              id="name"
-              className="w-full px-3 py-2 mt-1 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-              placeholder="John Doe"
-              required
+              id="username"
+              placeholder="Enter you username here"
             />
           </div>
           <div>
-            <label
-              htmlFor="email"
-              className="block text-sm font-medium text-gray-700"
-            >
-              Email
-            </label>
-            <input
+            <Label text="Email" style="" />
+            <InputText
               type="email"
               id="email"
-              className="w-full px-3 py-2 mt-1 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-              placeholder="your@email.com"
-              required
+              placeholder="Enter you username here"
             />
           </div>
+
           <div>
-            <label
-              htmlFor="password"
-              className="block text-sm font-medium text-gray-700"
-            >
-              Password
-            </label>
-            <input
+            <Label text="Password" style="" />
+            <InputText
               type="password"
               id="password"
-              className="w-full px-3 py-2 mt-1 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-              placeholder="••••••••"
-              required
+              placeholder="Enter you password"
             />
           </div>
           <div>
-            <button
+            <Button
               type="submit"
-              className="w-full px-4 py-2 text-white bg-blue-600 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
-            >
-              Create Account
-            </button>
+              text="Signup"
+              className="bg-red-500 text-white"
+            />
           </div>
         </form>
-        <div className="text-sm text-center text-gray-600">
-          Already have an account? <Link to="/login"> Login</Link>
-        </div>
+
+        <Redirect linkto="/login" linkText="Login" />
       </div>
     </div>
   );

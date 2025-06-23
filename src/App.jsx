@@ -14,6 +14,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import LoginForm from "./components/form/LoginForm";
 import TrendingProducts from "./components/Navbar/TrendingProducts";
 import SignupForm from "./components/form/Signup";
+import NotFound from "./components/notFound/Notfound";
 
 const BannerData = {
   discount: "30% OFF",
@@ -61,6 +62,7 @@ const App = () => {
         <Route path="/login" element={<LoginForm />} />
         <Route path="/signup" element={<SignupForm />} />
         <Route path="/trending-products" element={<TrendingProducts />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />
     </Router>
